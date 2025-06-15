@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
-import Lottie from "lottie-react";
 import type { NextPage } from "next";
+import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 import { PageTitle } from "src/component/PageTitle";
 import { PageSEO } from "src/component/SEO";
@@ -8,6 +8,15 @@ import { siteMetadata } from "src/data/siteMetaData";
 import { FluidLayout } from "src/layout";
 
 import userAnimationIcon from "./76242-love-letter-lottie-animation.json";
+
+const Lottie = dynamic(
+  () => {
+    return import("lottie-react");
+  },
+  {
+    ssr: false,
+  }
+);
 
 const Success: NextPage = () => {
   const router = useRouter();
@@ -23,7 +32,7 @@ const Success: NextPage = () => {
       <PageTitle>{router.query.subject}</PageTitle>
       <div className="flex justify-center">
         <div className="flex">
-          <Lottie animationData={userAnimationIcon} autoPlay={true} />
+          {typeof window !== "undefined" && <Lottie animationData={userAnimationIcon} autoPlay={true} />}
           <span className="origin-left rotate-45 text-xs text-gray-500 md:ml-32">
             <sup>LottieFiles by</sup>
             <br />
