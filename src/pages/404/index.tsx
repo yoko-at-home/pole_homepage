@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
-import Lottie from "lottie-react";
 import type { NextPage } from "next";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { Button } from "src/component/Button";
 import { PageTitle } from "src/component/PageTitle";
@@ -9,6 +9,15 @@ import { siteMetadata } from "src/data/siteMetaData";
 import { FluidLayout } from "src/layout";
 
 import userAnimationIcon from "./84048-404-page-not-found.json";
+
+const Lottie = dynamic(
+  () => {
+    return import("lottie-react");
+  },
+  {
+    ssr: false,
+  }
+);
 
 const Custom404: NextPage = () => {
   return (
@@ -34,7 +43,7 @@ const Custom404: NextPage = () => {
             </div>
           </div>
         </div>
-        <Lottie animationData={userAnimationIcon} autoPlay={true} />
+        {typeof window !== "undefined" && <Lottie animationData={userAnimationIcon} autoPlay={true} />}
       </div>
       <div className="mt-12 flex justify-center">
         <Button onClick="Return">Return</Button>
