@@ -5,7 +5,7 @@ export const data = [
   {
     iconName: "/static/svg/attachment-pin.svg",
     header: "合唱練習",
-    content: "2025年5月の第3回コンサート応援ありがとうございました。迎え次の演奏会に向け練習に励んでいます。",
+    content: "2025年5月の第3回コンサート応援ありがとうございました。次の演奏会に向け練習に励んでいます。",
   },
   {
     iconName: "/static/svg/compass-navigator.svg",
