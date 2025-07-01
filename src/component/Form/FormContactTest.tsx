@@ -1,23 +1,20 @@
 import { useRouter } from "next/router";
 import type { FormEvent } from "react";
-import { siteMetadata } from "src/data/siteMetaData";
 
-export const FormContact = () => {
+export const FormContactTest = () => {
   const router = useRouter();
 
-  const handleRegisterUser = async (event: FormEvent<HTMLFormElement>) => {
+  const handleTestSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const form = event.currentTarget;
 
     try {
-      // Resendでメール送信
-      const emailRes = await fetch("/api/send-resend", {
+      // テスト用のメール送信
+      const emailRes = await fetch("/api/test-email", {
         body: JSON.stringify({
           fullname: form.fullname.value,
           email: form.email.value,
           message: form.message.value,
-          to: siteMetadata.email,
-          subject: "お問い合わせありがとうございます",
         }),
         headers: {
           "Content-Type": "application/json",
@@ -26,33 +23,43 @@ export const FormContact = () => {
       });
 
       if (!emailRes.ok) {
-        throw new Error("メール送信に失敗しました");
+        const errorData = await emailRes.json();
+        throw new Error(errorData.message || "メール送信に失敗しました");
       }
+
+      await emailRes.json();
 
       // 成功時に/successページに遷移
       router.push({
         pathname: "/success",
         query: {
-          subject: "お問い合わせありがとうございます",
-          text: `折り返しご連絡いたします 💖
+          subject: "テストメール - お問い合わせありがとうございます",
+          text: `テストメールが正常に送信されました！ 💖
 
 お名前: ${form.fullname.value} 様
 メールアドレス: ${form.email.value}
 お問い合わせ内容:
-${form.message.value}`,
+${form.message.value}
+
+※ このメールはテスト用です。実際のお問い合わせは本番フォームをご利用ください。`,
         },
       });
     } catch (error) {
       console.error("Error:", error);
-      alert("送信に失敗しました。もう一度お試しください。");
+      alert(`送信に失敗しました: ${error instanceof Error ? error.message : "Unknown error"}`);
     }
   };
 
   return (
     <div>
+      <div className="mb-4 rounded-lg bg-yellow-100 p-4 text-yellow-800">
+        <strong>開発環境用テストフォーム</strong>
+        <br />
+        このフォームは開発環境でのみ表示され、テストメールを送信します。
+      </div>
       <div>
         <div className="container sm:mt-0 sm:p-6 lg:px-20">
-          <form onSubmit={handleRegisterUser}>
+          <form onSubmit={handleTestSubmit}>
             <div className="mb-3">
               <label htmlFor="fullname">お名前</label>
               <input
@@ -91,9 +98,9 @@ ${form.message.value}`,
             <div className="py-3 px-4 text-right sm:px-6">
               <button
                 type="submit"
-                className="w-full rounded-md bg-gradient-to-r  from-slate-300 to-[#8aba28] p-2 font-black text-slate-50 shadow-md focus:from-purple-700 focus:to-lime-400 focus:outline-none focus:ring-2 focus:ring-offset-2"
+                className="w-full rounded-md bg-gradient-to-r from-yellow-400 to-orange-500 p-2 font-black text-slate-50 shadow-md focus:from-yellow-600 focus:to-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2"
               >
-                送信
+                テスト送信
               </button>
             </div>
           </form>

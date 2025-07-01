@@ -1,30 +1,11 @@
+// DEPRECATED: このファイルは非推奨です。代わりに /api/send-resend.ts を使用してください。
+// SendGridからResend.comに移行しました。
+
 const handler = (req, res) => {
-  let msg = {};
-
-  const sgMail = require("@sendgrid/mail");
-
-  sgMail.setApiKey(process.env.SENDGRID_API_KEY); //SendGridのAPIキー
-
-  msg = {
-    to: req.body.to,
-    from: req.body.email,
-    subject: req.body.subject,
-    text: req.body.text,
-  };
-
-  (async () => {
-    try {
-      await sgMail.send(msg);
-      res.status(200).json(msg);
-    } catch (error) {
-      console.error(error);
-      if (error.response) {
-        console.error(error.response.body);
-      }
-    }
-  })();
-
-  res.status(200);
+  res.status(410).json({
+    message: "This endpoint is deprecated. Please use /api/send-resend instead.",
+    migration: "SendGrid to Resend.com",
+  });
 };
 
 // eslint-disable-next-line import/no-default-export

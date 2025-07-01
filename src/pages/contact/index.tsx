@@ -2,6 +2,7 @@
 import type { NextPage } from "next";
 import Image from "next/image";
 import { FormContact } from "src/component/Form";
+import { FormContactTest } from "src/component/Form/FormContactTest";
 import { PageTitle } from "src/component/PageTitle";
 import { PageSEO } from "src/component/SEO";
 import { siteMetadata } from "src/data/siteMetaData";
@@ -32,6 +33,7 @@ const Contact: NextPage = () => {
         <div className="mx-5 font-bold  text-zinc-700">渡辺（代表）</div>
       </div>
       <FormContact />
+      {process.env.NODE_ENV === "development" && <FormContactTest />}
     </FluidLayout>
   );
 };

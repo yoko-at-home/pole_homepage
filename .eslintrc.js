@@ -30,6 +30,7 @@ module.exports = {
       },
     ],
     "react/destructuring-assignment": ["off"],
+    "react/no-unknown-property": ["error", { ignore: ["jsx"] }],
     "import/newline-after-import": "error",
     "import/no-default-export": "off",
     "import-access/jsdoc": "error",
