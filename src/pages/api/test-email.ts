@@ -25,7 +25,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     // Resendの無料プランでは、APIキーを作成したメールアドレスにのみ送信可能
     const { error } = await resend.emails.send({
       from: `${siteMetadata.title} <onboarding@resend.dev>`, // Resendのテスト用ドメイン
-      to: ["yoko_iwasakijp@yahoo.co.jp"], // APIキーを作成したメールアドレス
+      to: [siteMetadata.email], // siteMetadata.emailを使用
       subject: "テストメール - お問い合わせ",
       text: `テストメールです 💖
 お名前: ${fullname || "テストユーザー"} 様

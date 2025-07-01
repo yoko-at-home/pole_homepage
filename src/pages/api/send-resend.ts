@@ -24,8 +24,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     // メール送信
     const emailData = {
-      from: process.env.RESEND_FROM_EMAIL || `${siteMetadata.title} <onboarding@resend.dev>`, // 環境変数で制御可能
-      to: [to || siteMetadata.email],
+      from: `${siteMetadata.title} <onboarding@resend.dev>`, // Resendのテストドメインを使用
+      to: [to || siteMetadata.email], // siteMetadata.emailを使用
       subject: subject || "お問い合わせありがとうございます",
       text:
         text ||
