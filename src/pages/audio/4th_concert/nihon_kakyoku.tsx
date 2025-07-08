@@ -8,23 +8,29 @@ import NaviWithinPage from "src/layout/NaviWithinPage";
 
 const nihonKayoku = [
   {
-    id: "hama-sop",
-    title: "浜辺の歌　ソプラノ",
-    href: "https://youtu.be/9BdLjIJejfw",
+    id: "hama-sop1",
+    title: "浜辺の歌　ソプラノ1",
+    href: "https://youtu.be/AKQCCX7ZeL8",
+  },
+  {
+    id: "hama-sop2",
+    title: "浜辺の歌　ソプラノ2",
+    href: "https://youtu.be/YT6mqdd9SuE",
   },
   {
     id: "hama-mezzo",
     title: "浜辺の歌　メゾソプラノ",
-    href: "https://youtu.be/RcmTnfZT-W0",
+    href: "https://youtu.be/btaVp1hesZI",
   },
   {
     id: "hama-alto",
     title: "浜辺の歌　アルト",
-    href: "https://youtu.be/1UYBTrctVgk",
+    href: "https://youtu.be/P501-nunZYQ",
   },
 ];
 const items = [
-  { href: "#hama-sop", label: "浜・ソプ" },
+  { href: "#hama-sop1", label: "浜・ソプ1" },
+  { href: "#hama-sop2", label: "浜・ソプ2" },
   { href: "#hama-mezzo", label: "浜・メゾ" },
   { href: "#hama-alto", label: "浜・アルト" },
   { href: "#audio-top", label: "↑トップへ↑" },
