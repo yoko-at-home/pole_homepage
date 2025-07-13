@@ -14,6 +14,11 @@ const convertToEmbedUrl = (url: string): string => {
     const videoId = url.split("/").pop();
     return `https://www.youtube.com/embed/${videoId}`;
   }
+  // Handle youtube.com/shorts URLs
+  if (url.includes("youtube.com/shorts")) {
+    const videoId = url.split("/shorts/")[1]?.split("?")[0];
+    return `https://www.youtube.com/embed/${videoId}`;
+  }
   // Handle youtube.com URLs
   if (url.includes("youtube.com")) {
     const videoId = new URL(url).searchParams.get("v");
