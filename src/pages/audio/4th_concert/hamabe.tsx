@@ -48,10 +48,10 @@ const NihonKakyokuPage = () => {
       <AudioLayout>
         <PageSEO
           title={`Audio- ${siteMetadata.title}`}
-          description="日本抒情歌曲 音源💕"
+          description="浜辺の歌 音源💕"
           ogType="website"
           ogImage={`${siteMetadata.siteUrl}${siteMetadata.siteLogo}`}
-          siteUrl={`${siteMetadata.siteUrl}/nihon_kakyoku`}
+          siteUrl={`${siteMetadata.siteUrl}/hamabe`}
         />
         <div className="flex w-full flex-col items-center gap-8">
           {nihonKayoku.map((song) => {

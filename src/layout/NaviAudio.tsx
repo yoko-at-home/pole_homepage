@@ -1,7 +1,8 @@
 import { NavLink } from "src/component/Button";
 
 export const audioMenu = [
-  { href: "/audio/4th_concert/nihon_kakyoku", label: "日本抒情歌曲" },
+  { href: "/audio/4th_concert/hamabe", label: "浜辺の歌" },
+  { href: "/audio/4th_concert/hituji", label: "野の羊" },
   { href: "/audio/4th_concert/momoe", label: "山口百恵シリーズ" },
   { href: "/audio/favorite", label: "Favorite songs" },
 ];
