@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention */
 import { PageTitle } from "src/component/PageTitle";
 
 export const Place = () => {
@@ -16,7 +15,8 @@ export const Place = () => {
             allowFullScreen
             loading="lazy"
             referrerPolicy=""
-          ></iframe>
+            title="立野台コミュニティセンター"
+          />
           <iframe
             className="m-3 mx-auto"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3249.020202531208!2d139.4099730759199!3d35.4790439726532!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018ff7a740de4b3%3A0xb2e66319a54be069!2z5bqn6ZaT5biCIOeri-mHjuWPsOOCs-ODn-ODpeODi-ODhuOCo-OCu-ODs-OCv-ODvA!5e0!3m2!1sja!2sjp!4v1732954272133!5m2!1sja!2sjp"
@@ -26,7 +26,8 @@ export const Place = () => {
             allowFullScreen
             loading="lazy"
             referrerPolicy=""
-          ></iframe>
+            title="座間公民館"
+          />
         </div>
 
         <div className="mx-5 py-10 text-lg font-bold text-zinc-700 sm:p-10">

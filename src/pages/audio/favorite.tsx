@@ -1,10 +1,8 @@
-/* eslint-disable @next/next/no-img-element */
 import type { NextPage } from "next";
 import { Favorite } from "src/component/Audio";
 import { PageSEO } from "src/component/SEO";
 import { siteMetadata } from "src/data/siteMetaData";
 import { FluidLayout } from "src/layout";
-// eslint-disable-next-line import-access/jsdoc
 import { AudioLayout } from "src/layout";
 
 const FavoriteSongs: NextPage = () => {

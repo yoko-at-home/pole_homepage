@@ -33,6 +33,7 @@ const sitemapData: SitemapItem[] = [
       },
     ],
   },
+
   {
     title: "お知らせ",
     href: "/news",
@@ -45,26 +46,19 @@ const sitemapData: SitemapItem[] = [
   },
 ];
 
-const SitemapItem: React.FC<{ item: SitemapItem; level?: number }> = ({ item, level = 0 }) => {
+const SitemapItemComponent: React.FC<{ item: SitemapItem; level?: number }> = ({ item, level = 0 }) => {
   const indentClass = level > 0 ? `ml-${level * 4}` : "";
 
   return (
     <div className={`${indentClass} mb-2`}>
-      <Link
-        href={item.href}
-        className="text-blue-600 hover:text-blue-800 hover:underline"
-      >
+      <Link href={item.href} className="text-blue-600 hover:text-blue-800 hover:underline">
         {item.title}
       </Link>
-      {item.description && (
-        <p className="mt-1 text-sm text-gray-600">{item.description}</p>
-      )}
+      {item.description && <p className="mt-1 text-sm text-gray-600">{item.description}</p>}
       {item.children && (
         <div className="mt-2">
           {item.children.map((child, index) => {
-            return (
-              <SitemapItem key={`${child.href}-${index}`} item={child} level={level + 1} />
-            );
+            return <SitemapItemComponent key={`${child.href}-${index}`} item={child} level={level + 1} />;
           })}
         </div>
       )}
@@ -89,7 +83,7 @@ const Sitemap: NextPage = () => {
           {sitemapData.map((item, index) => {
             return (
               <div key={`sitemap-${item.href}-${index}`} className="rounded-lg border border-gray-200 p-4">
-                <SitemapItem item={item} />
+                <SitemapItemComponent item={item} />
               </div>
             );
           })}

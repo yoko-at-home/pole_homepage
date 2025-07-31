@@ -13,13 +13,7 @@ const tsparser = require("@typescript-eslint/parser");
 module.exports = [
   js.configs.recommended,
   {
-    ignores: [
-      ".next/**/*",
-      "node_modules/**/*",
-      "out/**/*",
-      "dist/**/*",
-      "build/**/*",
-    ],
+    ignores: [".next/**/*", "node_modules/**/*", "out/**/*", "dist/**/*", "build/**/*"],
   },
   {
     files: ["**/*.{js,jsx,ts,tsx}"],
@@ -70,6 +64,7 @@ module.exports = [
       "func-style": ["error", "expression"],
       "arrow-body-style": ["error", "always"],
       "no-restricted-imports": ["error", { paths: [{ name: "react", importNames: ["default"] }] }],
+      "no-irregular-whitespace": "off",
 
       // react
       "react/display-name": "error",

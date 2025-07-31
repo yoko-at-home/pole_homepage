@@ -1,5 +1,3 @@
-/* eslint-disable react/jsx-key */
-/* eslint-disable tailwindcss/no-custom-classname */
 import "react-vertical-timeline-component/style.min.css";
 
 import type { WindowLike } from "dompurify";
@@ -35,7 +33,7 @@ export const TimeLineItem: FC<Props> = (props) => {
 
   return (
     <div className="overflow-x-hidden bg-[#ece7e7] text-center" style={{ fontFamily: "Trebuchet Ms" }}>
-      <PageTitle>🚢　🚢　🚢</PageTitle>
+      <PageTitle>🚢 🚢 🚢</PageTitle>
       <VerticalTimeline>
         {data.map((event, index) => {
           return (

@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-key */
 import type { NextPage } from "next";
 import { PageTitle } from "src/component/PageTitle";
 
