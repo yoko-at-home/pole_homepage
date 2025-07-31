@@ -32,13 +32,19 @@ export const Archive: NextPage<CardProps> = (props) => {
     close();
   }, [close]);
 
+  const handleButtonClick = (d: CardProps) => {
+    return () => {
+      return handleClick(d);
+    };
+  };
+
   return (
     <div id="archive">
       <PageTitle>ポレポーレが演奏した作品</PageTitle>
       <div className="mt-10 grid grid-cols-1 gap-3 md:grid-cols-2 md:px-3 lg:grid-cols-3">
         {data.map((d) => {
           return (
-            <button type="button" key={d.header} onClick={() => handleClick(d)}>
+            <button type="button" key={d.header} onClick={handleButtonClick(d)}>
               <Card imageFileName={d.imageFileName} header={d.header} content={d.content} subheader={d.subheader} />
             </button>
           );

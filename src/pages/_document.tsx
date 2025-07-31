@@ -1,5 +1,3 @@
-/* eslint-disable @next/next/no-page-custom-font */
-/* eslint-disable import/no-default-export */
 import { Head, Html, Main, NextScript } from "next/document";
 import { siteMetadata } from "src/data/siteMetaData";
 

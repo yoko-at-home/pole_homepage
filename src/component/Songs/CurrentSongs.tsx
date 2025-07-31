@@ -1,6 +1,3 @@
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
-/* eslint-disable react/jsx-handler-names */
-/* eslint-disable react/jsx-key */
 import type { FC } from "react";
 import { useCallback, useState } from "react";
 import { useModal } from "react-hooks-use-modal";
@@ -37,21 +34,25 @@ export const CurrentSongs: FC<CardProps> = (props) => {
         open();
       }
     },
-    [open]
+    [open],
   );
+
+  const handleButtonClick = (d: SongData) => {
+    return () => {
+      return handleOnClick(d);
+    };
+  };
+  const handleClose = () => {
+    return close();
+  };
+
   return (
     <div id="songs">
       <PageTitle>ポレポーレが練習している作品</PageTitle>
       <div className="mt-10 grid grid-cols-1 gap-3 md:grid-cols-2 md:px-3 lg:grid-cols-3">
         {data.map((d) => {
           return (
-            <button
-              type="button"
-              key={d.header}
-              onClick={() => {
-                return handleOnClick(d);
-              }}
-            >
+            <button type="button" key={d.header} onClick={handleButtonClick(d)}>
               <Card imageFileName={d.imageFileName} header={d.header} content={d.content} subheader={d.subheader} />
             </button>
           );
@@ -70,7 +71,7 @@ export const CurrentSongs: FC<CardProps> = (props) => {
           <div className="mt-8 flex justify-end">
             <button
               type="button"
-              onClick={close}
+              onClick={handleClose}
               className="mb-3 rounded bg-gradient-to-r from-gray-400 to-gray-500 p-1 text-center font-medium text-gray-300 opacity-80 hover:text-gray-100 focus:from-purple-600 focus:to-lime-400 sm:px-4 lg:mr-3 lg:py-2"
             >
               閉じる
