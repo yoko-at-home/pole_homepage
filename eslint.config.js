@@ -7,12 +7,20 @@ const importPlugin = require("eslint-plugin-import");
 const simpleImportSortPlugin = require("eslint-plugin-simple-import-sort");
 const sortDestructureKeysPlugin = require("eslint-plugin-sort-destructure-keys");
 const tailwindcssPlugin = require("eslint-plugin-tailwindcss");
-const importAccessPlugin = require("eslint-plugin-import-access");
 const tseslint = require("@typescript-eslint/eslint-plugin");
 const tsparser = require("@typescript-eslint/parser");
 
 module.exports = [
   js.configs.recommended,
+  {
+    ignores: [
+      ".next/**/*",
+      "node_modules/**/*",
+      "out/**/*",
+      "dist/**/*",
+      "build/**/*",
+    ],
+  },
   {
     files: ["**/*.{js,jsx,ts,tsx}"],
     languageOptions: {
@@ -25,18 +33,28 @@ module.exports = [
           jsx: true,
         },
       },
+      globals: {
+        console: "readonly",
+        process: "readonly",
+        window: "readonly",
+        document: "readonly",
+        fetch: "readonly",
+        alert: "readonly",
+        React: "readonly",
+        module: "readonly",
+        require: "readonly",
+      },
     },
     plugins: {
       "@typescript-eslint": tseslint,
       "@next/next": nextPlugin,
-      "react": reactPlugin,
+      react: reactPlugin,
       "react-hooks": reactHooksPlugin,
       "jsx-a11y": jsxA11yPlugin,
-      "import": importPlugin,
+      import: importPlugin,
       "simple-import-sort": simpleImportSortPlugin,
       "sort-destructure-keys": sortDestructureKeysPlugin,
-      "tailwindcss": tailwindcssPlugin,
-      "import-access": importAccessPlugin,
+      tailwindcss: tailwindcssPlugin,
     },
     settings: {
       tailwindcss: { groupByResponsive: true },
@@ -52,7 +70,7 @@ module.exports = [
       "func-style": ["error", "expression"],
       "arrow-body-style": ["error", "always"],
       "no-restricted-imports": ["error", { paths: [{ name: "react", importNames: ["default"] }] }],
-      
+
       // react
       "react/display-name": "error",
       "react/jsx-handler-names": [
@@ -66,14 +84,14 @@ module.exports = [
       ],
       "react/destructuring-assignment": ["off"],
       "react/no-unknown-property": ["error", { ignore: ["jsx"] }],
-      
+
       // import
       "import/newline-after-import": "error",
       "import/no-default-export": "off",
       "simple-import-sort/imports": "error",
       "simple-import-sort/exports": "error",
       "sort-destructure-keys/sort-destructure-keys": 2,
-      
+
       // @typescript-eslint
       "@typescript-eslint/no-explicit-any": "off",
       "@typescript-eslint/no-var-requires": "off",
@@ -91,14 +109,14 @@ module.exports = [
           filter: { regex: "^_", match: false },
         },
       ],
-      
+
       // jsx-a11y
       "jsx-a11y/no-autofocus": "off",
       "jsx-a11y/anchor-is-valid": [
         "error",
         { components: ["Link"], specialLink: ["hrefLeft", "hrefRight"], aspects: ["invalidHref", "preferButton"] },
       ],
-      
+
       // tailwind
       "tailwindcss/classnames-order": "warn",
       "tailwindcss/enforces-shorthand": "warn",

@@ -34,35 +34,6 @@ const sitemapData: SitemapItem[] = [
     ],
   },
   {
-    title: "音声",
-    href: "/audio",
-    description: "ポレポーレの音声コンテンツ",
-    children: [
-      {
-        title: "第4回コンサート",
-        href: "/audio/4th_concert",
-        description: "第4回コンサートの音声",
-        children: [
-          {
-            title: "百恵",
-            href: "/audio/4th_concert/momoe",
-            description: "百恵の音声",
-          },
-          {
-            title: "日本歌曲",
-            href: "/audio/4th_concert/nihon_kakyoku",
-            description: "日本歌曲の音声",
-          },
-        ],
-      },
-      {
-        title: "お気に入り",
-        href: "/audio/favorite",
-        description: "お気に入りの音声",
-      },
-    ],
-  },
-  {
     title: "お知らせ",
     href: "/news",
     description: "ポレポーレからのお知らせ",
@@ -71,11 +42,6 @@ const sitemapData: SitemapItem[] = [
     title: "お問い合わせ",
     href: "/contact",
     description: "ポレポーレへのお問い合わせ",
-  },
-  {
-    title: "利用規約",
-    href: "/tos",
-    description: "サイト利用規約",
   },
 ];
 
