@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import type { NextPage } from "next";
 import dynamic from "next/dynamic";
 import Link from "next/link";
@@ -16,7 +15,7 @@ const Lottie = dynamic(
   },
   {
     ssr: false,
-  }
+  },
 );
 
 const Custom404: NextPage = () => {

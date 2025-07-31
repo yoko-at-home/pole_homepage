@@ -15,14 +15,40 @@ export const HeaderText = () => {
       </div>
       <style jsx>{`
         .title {
-          text-shadow: #8aba28 2px 2px 0, #d1d093 4px 4px 0;
-          font-family: Montserrat, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial,
-            sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+          text-shadow:
+            #8aba28 2px 2px 0,
+            #d1d093 4px 4px 0;
+          font-family:
+            Montserrat,
+            -apple-system,
+            BlinkMacSystemFont,
+            Segoe UI,
+            Roboto,
+            Helvetica Neue,
+            Arial,
+            sans-serif,
+            Apple Color Emoji,
+            Segoe UI Emoji,
+            Segoe UI Symbol,
+            Noto Color Emoji;
         }
         .title-small {
-          text-shadow: #8aba28 2px 2px 0, #d1d093 4px 4px 0;
-          font-family: Montserrat, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial,
-            sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+          text-shadow:
+            #8aba28 2px 2px 0,
+            #d1d093 4px 4px 0;
+          font-family:
+            Montserrat,
+            -apple-system,
+            BlinkMacSystemFont,
+            Segoe UI,
+            Roboto,
+            Helvetica Neue,
+            Arial,
+            sans-serif,
+            Apple Color Emoji,
+            Segoe UI Emoji,
+            Segoe UI Symbol,
+            Noto Color Emoji;
         }
       `}</style>
     </div>

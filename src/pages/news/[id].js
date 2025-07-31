@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention*/
 import parse from "html-react-parser";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -94,7 +93,7 @@ export const getStaticProps = async ({ params, preview = false, previewData }) =
 
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_API_URL}news/${id}?${draftKey !== undefined ? `draftKey=${draftKey}` : ""}`,
-    key
+    key,
   );
 
   if (!res.ok) {

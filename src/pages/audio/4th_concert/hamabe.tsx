@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import { PageSEO } from "src/component/SEO";
 import { VideoPlayer } from "src/component/VideoPlayer";
 import { siteMetadata } from "src/data/siteMetaData";

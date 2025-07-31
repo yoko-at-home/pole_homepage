@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention */
 import type { NextPage } from "next";
 import Image from "next/image";
 import { FormContact } from "src/component/Form";

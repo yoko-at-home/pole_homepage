@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention */
 import Link from "next/link";
 import { Pagination } from "src/component/Pagenation";
 import { PageSubTitle } from "src/component/PageTitle";
