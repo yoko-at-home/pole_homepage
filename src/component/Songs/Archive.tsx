@@ -1,6 +1,3 @@
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
-/* eslint-disable react/jsx-handler-names */
-/* eslint-disable react/jsx-key */
 import type { NextPage } from "next";
 import { useCallback, useState } from "react";
 import { useModal } from "react-hooks-use-modal";
@@ -18,7 +15,7 @@ export const Archive: NextPage<CardProps> = (props) => {
   });
   const [selectedItem, setSelectedItem] = useState<CardProps>(props);
 
-  const handleOnClick = useCallback(
+  const handleClick = useCallback(
     (d: CardProps) => {
       const result = data.find(({ header }) => {
         return header === d.header;
@@ -28,21 +25,20 @@ export const Archive: NextPage<CardProps> = (props) => {
         open();
       }
     },
-    [open]
+    [open],
   );
+
+  const handleClose = useCallback(() => {
+    close();
+  }, [close]);
+
   return (
     <div id="archive">
       <PageTitle>ポレポーレが演奏した作品</PageTitle>
       <div className="mt-10 grid grid-cols-1 gap-3 md:grid-cols-2 md:px-3 lg:grid-cols-3">
         {data.map((d) => {
           return (
-            <button
-              type="button"
-              key={d.header}
-              onClick={() => {
-                return handleOnClick(d);
-              }}
-            >
+            <button type="button" key={d.header} onClick={() => handleClick(d)}>
               <Card imageFileName={d.imageFileName} header={d.header} content={d.content} subheader={d.subheader} />
             </button>
           );
@@ -61,7 +57,7 @@ export const Archive: NextPage<CardProps> = (props) => {
           <div className="mt-8 flex justify-end">
             <button
               type="button"
-              onClick={close}
+              onClick={handleClose}
               className="mb-3 rounded bg-gradient-to-r from-gray-400 to-gray-500 p-1 text-center font-medium text-gray-300 opacity-80 hover:text-gray-100 focus:from-purple-600 focus:to-lime-400 sm:px-4 lg:mr-3 lg:py-2"
             >
               閉じる
