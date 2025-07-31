@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import type { FC } from "react";
+import { memo } from "react";
 
 export type CardProps = {
   imageFileName?: string;
@@ -12,8 +13,7 @@ export type CardProps = {
   key?: string;
 };
 
-export const Card: FC<CardProps> = (props) => {
-  // console.log(porps);
+export const Card: FC<CardProps> = memo((props) => {
   return (
     <div
       className="group mb-10 w-full items-center bg-slate-400/10 p-2 shadow-lg shadow-slate-200 hover:bg-primary/10"
@@ -34,9 +34,11 @@ export const Card: FC<CardProps> = (props) => {
       </div>
     </div>
   );
-};
+});
 
-export const CardModal: FC<CardProps> = (props) => {
+Card.displayName = "Card";
+
+export const CardModal: FC<CardProps> = memo((props) => {
   return (
     <div className="h-4/5 p-4" style={{ maxWidth: "800px" }}>
       <div className="flex flex-col border-2 border-gray-200 p-3  text-left md:flex-row">
@@ -60,4 +62,6 @@ export const CardModal: FC<CardProps> = (props) => {
       </div>
     </div>
   );
-};
+});
+
+CardModal.displayName = "CardModal";
