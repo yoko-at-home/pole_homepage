@@ -66,6 +66,10 @@ const News: FC<Props> = (props) => {
           })}
       </ul>
       {props.totalCount < 10 ? null : <Pagination totalCount={props.totalCount} />}
+      <PageTitle>2025年度スケジュール</PageTitle>
+      <div className="mt-10">
+        <img src="/static/schedule2025.png" alt="説明文" className="max-w-full h-auto rounded-lg shadow-lg" />
+      </div>
     </FluidLayout>
   );
 };
