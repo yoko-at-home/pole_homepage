@@ -48,8 +48,8 @@ export const data = [
     desc: "ステージクリエイター。この人なくして、ステージなし。深みのあるメゾソプラノで曲に奥行きをプラス。いつも前向きな姿勢で周りを元気づける。",
   },
   {
-    imageFileName: "static/images/team/",
-    header: "飯塚 眞理子（ただいま準備中）",
+    imageFileName: "static/images/team/mariko-iizuka.webp",
+    header: "飯塚 眞理子",
     subheader: "メゾソプラノ",
     desc: "ポレポーレに新メンバーとして加わりました！！透明感のあるメゾソプラノで曲に奥行きをプラス❤️",
   },
