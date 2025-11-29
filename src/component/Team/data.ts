@@ -49,7 +49,7 @@ export const data = [
   },
   {
     imageFileName: "static/images/team/mariko-iizuka.webp",
-    header: "飯塚 眞理子",
+    header: "飯塚 真理子",
     subheader: "メゾソプラノ",
     desc: "ポレポーレに新メンバーとして加わりました！！透明感のあるメゾソプラノで曲に奥行きをプラス❤️",
   },
