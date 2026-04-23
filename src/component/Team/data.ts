@@ -25,33 +25,39 @@ export const data = [
     desc: "パンチのある声量、思いを込めた歌声が聴く人の心に響きます。どんな時も笑顔で場を盛り上げるムードメーカー。マジックのように生花や小物をアレンジする達人。",
   },
   {
+    imageFileName: "static/images/team/asano.webp",
+    header: "浅野 瞳",
+    subheader: "メゾソプラノ 会計担当",
+    desc: "愛情溢れる歌声で聴く人を優しく包むおしゃれ上手で、お料理上手。時折おでこをポンと叩いて会場を沸かせる、お茶目で頼れる団の縁の下の力持ち。",
+  },
+  {
     imageFileName: "static/images/team/yoko.webp",
     header: "岩崎 葉子",
-    subheader: "ソプラノ",
+    subheader: "ソプラノ　合唱連盟理事会メンバー正",
     desc: "合唱への情熱をITから支えるポレポーレIT担当。楽しいテクノロジーと創意工夫が大好き。Webサイト、DTP、動画、音声編集もお手のもの。",
   },
   {
     imageFileName: "static/images/team/ozaki.webp",
     header: "尾崎 正子",
-    subheader: "ソプラノ",
+    subheader: "ソプラノ　会計監査",
     desc: "控えめながらも、ひたむきに練習に取り組む努力家。優しい歌声と場を和ませるジョークで、みんなに癒しと笑顔を届けるムードメーカー。",
   },
   {
     imageFileName: "",
     header: "加藤 八代生",
     subheader: "ソプラノ",
-    desc: "準備中",
+    desc: "メンバー不足に喘ぐソプラノを救うため彗星の如く現れた頼もしい助っ人。画像は鋭意準備中です。",
   },
   {
     imageFileName: "static/images/team/shima.webp",
     header: "嶋ノ内 美由起",
-    subheader: "ソプラノ",
+    subheader: "ソプラノ　コンサート会計",
     desc: "会長を支え、合唱への情熱を注ぐ頼れる右腕。優しい歌声と柔らかな心遣いでみんなを繋ぐ相談役。スケートへの愛を忘れない多才な副会長。",
   },
   {
     imageFileName: "static/images/team/akiko-goto.webp",
     header: "後藤 明子",
-    subheader: "メゾソプラノ・パートリーダー",
+    subheader: "メゾソプラノ・パートリーダー　",
     desc: "ステージクリエイター。この人なくして、ステージなし。深みのあるメゾソプラノで曲に奥行きをプラス。いつも前向きな姿勢で周りを元気づける。",
   },
   {
@@ -74,12 +80,6 @@ export const data = [
   //   desc: "豊かな声量でハーモニーに厚みを加える立役者。センス溢れる振り付け指導、ユーモアでみんなを元気に。ポレポーレで唯一ウエストを持つと噂の妖麗な貴婦人。",
   // },
   {
-    imageFileName: "static/images/team/asano.webp",
-    header: "浅野 瞳",
-    subheader: "メゾソプラノ",
-    desc: "愛情溢れる歌声で聴く人を優しく包むおしゃれ上手で、お料理上手。時折おでこをポンと叩いて会場を沸かせる、お茶目で頼れる団の縁の下の力持ち。",
-  },
-  {
     imageFileName: "static/images/team/nozomi.webp",
     header: "中元 望",
     subheader: "アルト・パートリーダー（練習リーダー）",
@@ -88,7 +88,7 @@ export const data = [
   {
     imageFileName: "static/images/team/seino.webp",
     header: "清野 ユキエ",
-    subheader: "アルト",
+    subheader: "アルト　合唱連盟理事会メンバー副",
     desc: "深い声と安定感でハーモニーを支える。ふとした一言で笑いを引き出す、頼れる姉御的な存在。フットワークの良さと行動範囲の広さがものすごい。",
   },
   {

@@ -20,7 +20,7 @@ const Navigation = ({ inView }: Props) => {
         className={
           inView
             ? "flex w-screen flex-wrap justify-center bg-primary/80 text-slate-300"
-            : "top-[0%] z-50 flex w-screen flex-wrap justify-center bg-primary/40 text-slate-700 backdrop-blur"
+            : "top-[0%] z-50 flex w-screen flex-wrap justify-center bg-primary/40 text-slate-100 backdrop-blur"
         }
       >
         {items.map(({ href, label }) => {
