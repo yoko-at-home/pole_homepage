@@ -33,11 +33,7 @@ const AboutUs = () => {
           />
 
           <div className="mx-auto mt-20 text-gray-500">
-            <ProductMainTitle>
-              慈しみ深き
-              <br />
-              ポレポーレのメンバー
-            </ProductMainTitle>
+            <ProductMainTitle>メンバー紹介</ProductMainTitle>
             <div className="h-10" />
             <Team />
           </div>
