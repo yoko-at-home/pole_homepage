@@ -19,7 +19,7 @@ const Navigation = ({ inView }: Props) => {
       <nav
         className={
           inView
-            ? "flex w-screen flex-wrap justify-center bg-[#288eba]/80 text-slate-300"
+            ? "flex w-screen flex-wrap justify-center bg-primary/80 text-slate-300"
             : "top-[0%] z-50 flex w-screen flex-wrap justify-center bg-primary/40 text-slate-700 backdrop-blur"
         }
       >

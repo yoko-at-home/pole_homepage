@@ -56,7 +56,7 @@ const News: FC<Props> = (props) => {
           .map((item) => {
             return (
               <li key={item.id}>
-                <div className="mb-10 flex flex-col rounded  bg-gradient-to-r from-blue-500/50 via-slate-500/20 to-red-500/30 p-8 shadow-lg">
+                <div className="mb-10 flex flex-col rounded  bg-gradient-to-r from-yellow-500/50 via-slate-500/20 to-[#4D7F1A]/30 p-8 shadow-lg">
                   <div className="mb-3 text-xl font-semibold sm:font-bold">{item.title}</div>
                   <div className="mb-3 text-xs text-slate-700/90 sm:text-sm">
                     公開：{formatYmdSlash(item.publishedAt)}

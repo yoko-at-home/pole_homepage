@@ -17,7 +17,7 @@ const AboutUs = () => {
       <div
         className="absolute top-0 min-h-screen w-full bg-top bg-repeat md:bg-cover"
         style={{
-          backgroundImage: "url('static/images/about/2025_background.webp')",
+          backgroundImage: "url('static/images/header/2026_background.jpg')",
           opacity: "100",
           padding: "0",
           margin: "0",
@@ -32,7 +32,7 @@ const AboutUs = () => {
             siteUrl={`${siteMetadata.siteUrl}/aboutus`}
           />
 
-          <div className="mx-auto mt-20 text-gray-500">
+          <div className="mx-auto mt-20 text-white">
             <ProductMainTitle>メンバー紹介</ProductMainTitle>
             <div className="h-10" />
             <Team />

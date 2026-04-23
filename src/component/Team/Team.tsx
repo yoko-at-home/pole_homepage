@@ -10,7 +10,7 @@ export const Team: NextPage = () => {
     <div className="grid grid-cols-1 gap-3 md:grid-cols-2 md:px-3 lg:grid-cols-3">
       {data.map((d) => {
         return (
-          <div className="mb-10 w-full rounded-xl border-2  bg-gray-50/90 p-8 text-center" key={d.header}>
+          <div className="mb-10 w-full rounded-xl border-2  bg-gray-50/70 p-8 text-center" key={d.header}>
             <img className="mx-auto h-40 w-40 rounded-full" src={d.imageFileName} alt={d.header} />
             <h4 className="text-2xl font-bold text-slate-800 shadow-sm">{d.header}</h4>
             <p className="text-lg font-semibold text-slate-800">{d.subheader}</p>

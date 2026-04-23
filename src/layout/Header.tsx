@@ -28,7 +28,7 @@ export const Header: FC<Props> = (props) => {
             },
           ])}
           style={{
-            backgroundImage: "url('/static/images/header/2025_background_top.webp')",
+            backgroundImage: "url('/static/images/header/2026_background.jpg')",
           }}
         >
           <HeaderText />

@@ -9,13 +9,13 @@ module.exports = {
     },
     extend: {
       textColor: {
-        primary: "#288eba",
+        primary: "#3E2904",
       },
       borderColor: {
-        primary: "#288eba",
+        primary: "#3E2904",
       },
       backgroundColor: {
-        primary: "#288eba",
+        primary: "#3E2904",
       },
       typography: {
         DEFAULT: {
