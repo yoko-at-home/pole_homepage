@@ -65,7 +65,7 @@ const CommonSEO: FC<Props> = ({ description, ogImage, ogType, title }) => {
 };
 
 export const PageSEO: FC<Props> = ({ description, title }) => {
-  const ogSiteLogo = siteMetadata.siteUrl + siteMetadata.siteLogo;
+  const defaultOgImage = siteMetadata.ogImage || siteMetadata.siteUrl + siteMetadata.siteLogo;
 
   return (
     <>
@@ -74,7 +74,7 @@ export const PageSEO: FC<Props> = ({ description, title }) => {
         description={description}
         ogType="website"
         siteUrl={siteMetadata.siteUrl}
-        ogImage={ogSiteLogo}
+        ogImage={defaultOgImage}
       />
       <link rel="icon" href="/static/favicons/favicon.ico" />
     </>

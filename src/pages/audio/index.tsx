@@ -39,7 +39,7 @@ const Audio: NextPage = () => {
         title={`Audio- ${siteMetadata.title}`}
         description="コンサートに向けて音とり音源💕"
         ogType="website"
-        ogImage={`${siteMetadata.siteUrl}${siteMetadata.siteLogo}`}
+        ogImage={siteMetadata.ogImage}
         siteUrl={`${siteMetadata.siteUrl}/audio`}
       />
       <Navi />

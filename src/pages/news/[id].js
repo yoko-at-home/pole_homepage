@@ -38,7 +38,7 @@ const NewsId = (props) => {
         title={`${props.data.title} - News - ${siteMetadata.title}`}
         description={props.data.title}
         ogType="website"
-        ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
+        ogImage={siteMetadata.ogImage}
         siteUrl={siteMetadata.siteUrl}
       />
       <main className="break-all">

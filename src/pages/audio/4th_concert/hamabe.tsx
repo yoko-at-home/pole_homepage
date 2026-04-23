@@ -49,7 +49,7 @@ const NihonKakyokuPage = () => {
           title={`Audio- ${siteMetadata.title}`}
           description="浜辺の歌 音源💕"
           ogType="website"
-          ogImage={`${siteMetadata.siteUrl}${siteMetadata.siteLogo}`}
+          ogImage={siteMetadata.ogImage}
           siteUrl={`${siteMetadata.siteUrl}/hamabe`}
         />
         <div className="flex w-full flex-col items-center gap-8">

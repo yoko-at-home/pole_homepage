@@ -13,7 +13,7 @@ const FavoriteSongs: NextPage = () => {
           title={`Audio- ${siteMetadata.title}`}
           description="Our Favorite Songs 音源💕"
           ogType="website"
-          ogImage={`${siteMetadata.siteUrl}${siteMetadata.siteLogo}`}
+          ogImage={siteMetadata.ogImage}
           siteUrl={`${siteMetadata.siteUrl}/audio/favorite`}
         />
         <Favorite />

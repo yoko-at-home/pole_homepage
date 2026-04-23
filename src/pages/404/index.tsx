@@ -25,7 +25,7 @@ const Custom404: NextPage = () => {
         title={`Page Not Found- ${siteMetadata.title}`}
         description="Page Not Found"
         ogType="website"
-        ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
+        ogImage={siteMetadata.ogImage}
         siteUrl={siteMetadata.siteUrl}
       />
       <div className="flex justify-center">

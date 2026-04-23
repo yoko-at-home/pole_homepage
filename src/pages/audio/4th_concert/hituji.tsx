@@ -55,7 +55,7 @@ const HitujiPage = () => {
           title={`Audio- ${siteMetadata.title}`}
           description="野の羊 音源💕"
           ogType="website"
-          ogImage={`${siteMetadata.siteUrl}${siteMetadata.siteLogo}`}
+          ogImage={siteMetadata.ogImage}
           siteUrl={`${siteMetadata.siteUrl}/hituji`}
         />
         <div className="flex w-full flex-col items-center gap-8">

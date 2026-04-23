@@ -53,7 +53,7 @@ const Home: FC<Props> = (props) => {
           <PageSEO
             title={`ご挨拶 - ${siteMetadata.title}`}
             ogType="website"
-            ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
+            ogImage={siteMetadata.ogImage}
             siteUrl={siteMetadata.siteUrl}
           />
           <ProductMainTitle>{props.data.title}</ProductMainTitle>

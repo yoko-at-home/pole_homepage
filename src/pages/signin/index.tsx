@@ -26,7 +26,7 @@ export default function SignIn() {
         title={`Audio - ${siteMetadata.title}`}
         description="Enter Password"
         ogType="website"
-        ogImage={`${siteMetadata.siteUrl}${siteMetadata.siteLogo}`}
+        ogImage={siteMetadata.ogImage}
         siteUrl={`${siteMetadata.siteUrl}/signin`}
       />
       <div className="py-10">音源ページにアクセスするには、パスワードを入力してください。</div>

@@ -39,7 +39,7 @@ const News: FC<Props> = (props) => {
         title={`最新情報 - ${siteMetadata.title}`}
         description="最新情報"
         ogType="website"
-        ogImage={`${siteMetadata.siteUrl}${siteMetadata.siteLogo}`}
+        ogImage={siteMetadata.ogImage}
         siteUrl={`${siteMetadata.siteUrl}/news`}
       />
 

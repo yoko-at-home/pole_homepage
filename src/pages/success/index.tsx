@@ -25,7 +25,7 @@ const Success: NextPage = () => {
         title={`Success- ${siteMetadata.title}`}
         description=""
         ogType="website"
-        ogImage={`${siteMetadata.siteUrl}${siteMetadata.siteLogo}`}
+        ogImage={siteMetadata.ogImage}
         siteUrl={`${siteMetadata.siteUrl}/success`}
       />
       <PageTitle>{router.query.subject}</PageTitle>

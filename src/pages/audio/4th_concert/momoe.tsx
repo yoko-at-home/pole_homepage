@@ -38,7 +38,7 @@ const MomoePage = () => {
           title={`Audio- ${siteMetadata.title}`}
           description="山口百恵シリーズ 音源💕"
           ogType="website"
-          ogImage={`${siteMetadata.siteUrl}${siteMetadata.siteLogo}`}
+          ogImage={siteMetadata.ogImage}
           siteUrl={`${siteMetadata.siteUrl}/momoe`}
         />
         <div className="flex w-full flex-col items-center gap-8">

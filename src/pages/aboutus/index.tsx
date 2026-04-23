@@ -28,7 +28,7 @@ const AboutUs = () => {
             title={`団員紹介 - ${siteMetadata.title}`}
             description="ポレポーレのメンバー"
             ogType="website"
-            ogImage={`${siteMetadata.siteUrl}${siteMetadata.siteLogo}`}
+            ogImage={siteMetadata.ogImage}
             siteUrl={`${siteMetadata.siteUrl}/aboutus`}
           />
 
