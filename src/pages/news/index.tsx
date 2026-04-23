@@ -23,6 +23,15 @@ type Props = {
   totalCount: number;
 };
 
+const formatYmdSlash = (value: unknown): string => {
+  const d = value instanceof Date ? value : new Date(String(value));
+  if (Number.isNaN(d.getTime())) return "";
+  const y = d.getFullYear();
+  const m = d.getMonth() + 1;
+  const day = d.getDate();
+  return `${y}/${m}/${day}`;
+};
+
 const News: FC<Props> = (props) => {
   return (
     <FluidLayout>
@@ -49,6 +58,13 @@ const News: FC<Props> = (props) => {
               <li key={item.id}>
                 <div className="mb-10 flex flex-col rounded  bg-gradient-to-r from-blue-500/50 via-slate-500/20 to-red-500/30 p-8 shadow-lg">
                   <div className="mb-3 text-xl font-semibold sm:font-bold">{item.title}</div>
+                  <div className="mb-3 text-xs text-slate-700/90 sm:text-sm">
+                    公開：{formatYmdSlash(item.publishedAt)}
+                    {formatYmdSlash(item.revisedAt) &&
+                    formatYmdSlash(item.revisedAt) !== formatYmdSlash(item.publishedAt)
+                      ? `（更新：${formatYmdSlash(item.revisedAt)}）`
+                      : null}
+                  </div>
                   <div className="flex flex-row-reverse items-center justify-between">
                     <Link href={`/news/${item.id}`} passHref>
                       <span
@@ -66,10 +82,10 @@ const News: FC<Props> = (props) => {
           })}
       </ul>
       {props.totalCount < 10 ? null : <Pagination totalCount={props.totalCount} />}
-      <PageTitle>2025年度スケジュール</PageTitle>
+      {/* <PageTitle>2025年度スケジュール</PageTitle>
       <div className="mt-10">
         <img src="/static/schedule2025.png" alt="説明文" className="max-w-full h-auto rounded-lg shadow-lg" />
-      </div>
+      </div> */}
     </FluidLayout>
   );
 };
