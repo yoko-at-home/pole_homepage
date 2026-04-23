@@ -29,7 +29,7 @@ const Contact: NextPage = () => {
           width="90"
         />
 
-        <div className="mx-5 font-bold  text-zinc-700">渡辺（代表）</div>
+        <div className="mx-5 font-bold  text-zinc-700">加藤 順子（代表）</div>
       </div>
       <FormContact />
       {process.env.NODE_ENV === "development" && <FormContactTest />}
