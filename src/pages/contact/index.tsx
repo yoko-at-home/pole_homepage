@@ -23,7 +23,7 @@ const Contact: NextPage = () => {
       <div className="flex flex-row items-center">
         <Image
           className="m-3 mx-auto h-40 w-40 rounded-full"
-          src="/static/images/team/watanabe.webp"
+          src="/static/images/team/junko.webp"
           alt="Kyoko Watanabe"
           height="90"
           width="90"
