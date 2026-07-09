@@ -9,7 +9,7 @@ export const siteMetadata = {
   siteLogo: "/static/twitter.webp",
   image: "/static/images/logo.png",
   ogImage: "https://polepole.netlify.app/static/2026-concert.png",
-  email: "yoko_iwasakijp@yahoo.co.jp",
+  email: "tw107sf.ham@icloud.com",
   locale: "ja-JP",
   altForImages: "イメージ図",
 };
