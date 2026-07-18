@@ -26,7 +26,7 @@ export const data = [
   },
   {
     imageFileName: "static/images/team/asano.webp",
-    header: "浅野 瞳",
+    header: "浅野 ひとみ",
     subheader: "会計担当 メゾソプラノ",
     desc: "愛情溢れる歌声で聴く人を優しく包むおしゃれ上手で、お料理上手。時折おでこをポンと叩いて会場を沸かせる、お茶目で頼れる団の縁の下の力持ち。",
   },
@@ -43,10 +43,10 @@ export const data = [
     desc: "控えめながらも、ひたむきに練習に取り組む努力家。優しい歌声と場を和ませるジョークで、みんなに癒しと笑顔を届けるムードメーカー。",
   },
   {
-    imageFileName: "",
+    imageFileName: "static/images/team/yayoi-kato.webp",
     header: "加藤 八代生",
     subheader: "ソプラノ",
-    desc: "メンバー不足に喘ぐソプラノを救うため彗星の如く現れた頼もしい助っ人。画像は鋭意準備中です。",
+    desc: "メンバー不足に喘ぐソプラノを救うため彗星の如く現れた頼もしい助っ人。ポレポーレに深い響きが加わりました",
   },
   {
     imageFileName: "static/images/team/shima.webp",

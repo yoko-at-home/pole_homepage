@@ -32,7 +32,7 @@ export const TimeLineItem: FC<Props> = (props) => {
   const parsedContent = ReactHtmlParser(sanitizedContent);
 
   return (
-    <div className="overflow-x-hidden bg-[#ece7e7] text-center" style={{ fontFamily: "Trebuchet Ms" }}>
+    <div className="overflow-x-hidden text-center" style={{ fontFamily: "Trebuchet Ms" }}>
       <PageTitle>🚢 🚢 🚢</PageTitle>
       <VerticalTimeline>
         {data.map((event, index) => {
@@ -52,7 +52,7 @@ export const TimeLineItem: FC<Props> = (props) => {
           );
         })}
       </VerticalTimeline>
-      <div className="z-50 mx-auto mt-10 h-36 w-full bg-[#ece7e7]">
+      <div className="z-50 mx-auto mt-10 h-36 w-full bg-[#c0c9c3]">
         <Link href="/contact" passHref>
           <span className="whitespace-nowrap rounded-full bg-primary p-10 text-center text-2xl font-extrabold text-white">
             ✨ 団員募集中 ✨

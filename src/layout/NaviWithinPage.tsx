@@ -19,14 +19,14 @@ const NaviWithinPage: FC<NavigationProps> = ({ items }) => {
   return (
     <nav className="relative z-40">
       <div className="fixed -right-2 bottom-3">
-        <ul className="rounded bg-black/30 p-2">
+        <ul className="bg-primary rounded p-2">
           {items.map((item) => {
             return (
               <li key={item.href}>
                 <a
                   href={item.href}
                   onClick={handleSmoothScroll}
-                  className="font-semibold text-gray-100 hover:text-green-600"
+                  className="hover:text-gray-300 font-semibold text-gray-100"
                 >
                   {item.label}
                 </a>

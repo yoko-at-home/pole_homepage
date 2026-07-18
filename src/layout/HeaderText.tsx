@@ -1,4 +1,3 @@
-/* eslint-disable tailwindcss/no-custom-classname */
 export const HeaderText = () => {
   return (
     <div className="relative">
@@ -6,7 +5,7 @@ export const HeaderText = () => {
         <div className="flex h-40 flex-col items-start justify-between py-5 px-2 text-center text-white sm:py-10 md:py-14">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl lg:tracking-wide ">
             <span className="text-2xl font-semibold">女声合唱団 </span>
-            <span className="title whitespace-nowrap">ポレポーレ</span>
+            {/* <span className="title whitespace-nowrap">ポレポーレ</span> */}
           </h1>
           <h2 className="z-20 text-3xl md:mt-10 md:text-3xl lg:text-4xl lg:tracking-wide xl:text-5xl">
             {/* <span className="title whitespace-nowrap">ゆっくりのんびり</span> */}

@@ -17,6 +17,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   try {
     const { email, fullname, message } = req.body;
 
+    if (!email) {
+      return res.status(400).json({ message: "メールアドレスを入力してください" });
+    }
+
     // 開発環境でのログ
     console.info("API Key available:", !!process.env.RESEND_API_KEY);
     console.info("Request body:", req.body);
@@ -25,7 +29,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     // Resendの無料プランでは、APIキーを作成したメールアドレスにのみ送信可能
     const { error } = await resend.emails.send({
       from: `${siteMetadata.title} <onboarding@resend.dev>`, // Resendのテスト用ドメイン
-      to: [siteMetadata.email], // siteMetadata.emailを使用
+      to: [email], // Resendアカウントで検証済みのメールアドレスを使用
       subject: "テストメール - お問い合わせ",
       text: `テストメールです 💖
 お名前: ${fullname || "テストユーザー"} 様

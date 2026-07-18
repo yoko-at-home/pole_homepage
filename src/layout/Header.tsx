@@ -1,6 +1,6 @@
 import cc from "classcat";
 import type { FC } from "react";
-import { HeaderText } from "src/layout/HeaderText";
+// import { HeaderText } from "src/layout/HeaderText";
 
 type Props = {
   className?: string;
@@ -18,20 +18,20 @@ export const Header: FC<Props> = (props) => {
         <div
           className={cc([
             {
-              "absolute top-0 w-full h-80 bg-top bg-cover opacity-100": props.opacity === "100",
+              "absolute top-0 w-full h-80 bg-center bg-cover opacity-100": props.opacity === "100",
             },
             {
               "absolute top-0 w-full h-80 bg-top bg-cover": props.opacity === "80",
             },
             {
-              "absolute w-full h-70 bg-top bg-repeat opacity-0": props.opacity === "0",
+              "absolute w-full h-70 bg-center bg-no-repeat opacity-0": props.opacity === "0",
             },
           ])}
           style={{
-            backgroundImage: "url('/static/images/header/2026_background.jpg')",
+            backgroundImage: "url('/static/images/header/2026_header_background.webp')",
           }}
         >
-          <HeaderText />
+          {/* <HeaderText /> */}
         </div>
       </div>
     </header>

@@ -15,10 +15,10 @@ const AboutUs = () => {
         </div>
       </div>
       <div
-        className="absolute top-0 min-h-screen w-full bg-top bg-repeat md:bg-cover"
+        className="absolute top-0 min-h-screen w-full bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url('static/images/header/2026_background.jpg')",
-          opacity: "100",
+          backgroundImage: "url('/static/images/team/green_border.jpg')",
+          backgroundSize: "100% 100%",
           padding: "0",
           margin: "0",
         }}
@@ -32,7 +32,7 @@ const AboutUs = () => {
             siteUrl={`${siteMetadata.siteUrl}/aboutus`}
           />
 
-          <div className="mx-auto mt-20 text-white">
+          <div className="mx-auto mt-20">
             <ProductMainTitle>メンバー紹介</ProductMainTitle>
             <div className="h-10" />
             <Team />

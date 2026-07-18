@@ -51,7 +51,14 @@ module.exports = [
       tailwindcss: tailwindcssPlugin,
     },
     settings: {
-      tailwindcss: { groupByResponsive: true },
+      tailwindcss: {
+        groupByResponsive: true,
+        whitelist: [
+          "vertical-timeline-element--education",
+          "vertical-timeline-element-title",
+          "vertical-timeline-element--work",
+        ],
+      },
       react: {
         version: "detect",
       },

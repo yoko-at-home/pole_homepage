@@ -19,6 +19,9 @@ const Contact: NextPage = () => {
       />
 
       <PageTitle>お問い合わせ</PageTitle>
+      <p className="text-gray-500 my-10">
+        2026年6月から7月中旬にかけてエラーが生じ、お問い合わせフォームは利用できませんでした。ご迷惑をおかけしました。現在は利用可能です。
+      </p>
       {/* <PageSubTitle fontWeight="ordinary">お電話によるお問合せ</PageSubTitle> */}
       <div className="flex flex-row items-center">
         <Image

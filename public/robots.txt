@@ -1,0 +1,13 @@
+# Googlebot
+User-agent: Googlebot
+Disallow: /nogooglebot/
+
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://polepole.netlify.app
+
+# Sitemaps
+Sitemap: https://polepole.netlify.app/sitemap.xml
