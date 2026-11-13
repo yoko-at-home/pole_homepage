@@ -5,6 +5,15 @@ const nextConfig = {
   images: {
     domains: ["images.microcms-assets.io"],
   },
+  async redirects() {
+    return [
+      {
+        source: "/news/page/1",
+        destination: "/news",
+        permanent: true,
+      },
+    ];
+  },
   reactStrictMode: true,
   webpack: (config, { isServer }) => {
     if (!isServer) {
