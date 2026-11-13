@@ -1,119 +1,39 @@
-import axios from "axios";
 import type { GetStaticProps } from "next";
-import Link from "next/link";
 import type { FC } from "react";
-import { Pagination } from "src/component/Pagenation";
-import { PageTitle } from "src/component/PageTitle";
-import { PageSEO } from "src/component/SEO";
-import { siteMetadata } from "src/data/siteMetaData";
-import { FluidLayout } from "src/layout";
+import { NewsPage } from "src/component/News";
+import { type NewsItem, fetchNewsPage } from "src/lib/news";
 
 type Props = {
-  data: {
-    body: HTMLAnchorElement;
-    createdAt: Date;
-    description: string;
-    id: string;
-    publishedAt: Date;
-    revisedAt: Date;
-    title: string;
-    updatedAt: Date;
-    content: HTMLAnchorElement;
-  }[];
+  items: NewsItem[];
   totalCount: number;
 };
 
-const formatYmdSlash = (value: unknown): string => {
-  const d = value instanceof Date ? value : new Date(String(value));
-  if (Number.isNaN(d.getTime())) return "";
-  const y = d.getFullYear();
-  const m = d.getMonth() + 1;
-  const day = d.getDate();
-  return `${y}/${m}/${day}`;
-};
-
 const News: FC<Props> = (props) => {
-  return (
-    <FluidLayout>
-      <PageSEO
-        title={`最新情報 - ${siteMetadata.title}`}
-        description="最新情報"
-        ogType="website"
-        ogImage={siteMetadata.ogImage}
-        siteUrl={`${siteMetadata.siteUrl}/news`}
-      />
-
-      <div />
-      <PageTitle>
-        <span className="tracking-wider ">最新情報</span>
-      </PageTitle>
-      {/* <h1 className="mb-3 font-semibold sm:font-bold">ポレポーレ 2021 ファーストコンサートのご報告</h1> */}
-      <ul>
-        {props.data
-          .sort((a, b) => {
-            return b.updatedAt > a.updatedAt ? 1 : -1;
-          })
-          .map((item) => {
-            return (
-              <li key={item.id}>
-                <div className="mb-10 flex flex-col rounded  bg-gradient-to-r from-yellow-500/50 via-slate-500/20 to-[#4D7F1A]/30 p-8 shadow-lg">
-                  <div className="mb-3 text-xl font-semibold sm:font-bold">{item.title}</div>
-                  <div className="mb-3 text-xs text-slate-700/90 sm:text-sm">
-                    公開：{formatYmdSlash(item.publishedAt)}
-                    {formatYmdSlash(item.revisedAt) &&
-                    formatYmdSlash(item.revisedAt) !== formatYmdSlash(item.publishedAt)
-                      ? `（更新：${formatYmdSlash(item.revisedAt)}）`
-                      : null}
-                  </div>
-                  <div className="flex flex-row-reverse items-center justify-between">
-                    <Link href={`/news/${item.id}`} passHref>
-                      <span
-                        aria-label="Read more"
-                        className="ml-5 animate-pulse whitespace-nowrap bg-primary p-2 font-bold text-slate-100 shadow-lg shadow-slate-100 sm:py-3 sm:px-5"
-                      >
-                        {item.content === undefined ? null : "詳細はこちら"}
-                      </span>
-                    </Link>
-                    <div className="text-sm sm:text-base">{item.description}</div>
-                  </div>
-                </div>
-              </li>
-            );
-          })}
-      </ul>
-      {props.totalCount < 10 ? null : <Pagination totalCount={props.totalCount} />}
-      {/* <PageTitle>2025年度スケジュール</PageTitle>
-      <div className="mt-10">
-        <img src="/static/schedule2025.png" alt="説明文" className="max-w-full h-auto rounded-lg shadow-lg" />
-      </div> */}
-    </FluidLayout>
-  );
+  return <NewsPage currentPage={1} items={props.items} totalCount={props.totalCount} />;
 };
+
 export default News;
 
-export const getStaticProps: GetStaticProps<Props, never, { id: string; draftKey: string }> = async ({
+export const getStaticProps: GetStaticProps<Props, never, { draftKey: string; id: string }> = async ({
   preview,
   previewData,
-}): Promise<{
-  props: Props;
-}> => {
-  const key = {
-    headers: { "X-MICROCMS-API-KEY": process.env.API_KEY || "" },
-  };
+}) => {
+  const data = await fetchNewsPage(1);
+  const items = data.contents ?? [];
 
-  const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}news/?limit=6`, key);
-  const data = await res.data;
-
-  // プレビュー時は draft のコンテンツを追加
-  if (preview) {
-    const draftUrl = `${process.env.NEXT_PUBLIC_API_URL}news/${previewData?.id}?draftKey=${previewData?.draftKey}`;
-    const draftRes = await axios.get(draftUrl, key);
-    data.unshift(await draftRes.data);
+  if (preview && previewData?.id) {
+    const draftRes = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}news/${previewData.id}?draftKey=${previewData.draftKey ?? ""}`,
+      { headers: { "X-MICROCMS-API-KEY": process.env.API_KEY || "" } },
+    );
+    if (draftRes.ok) {
+      items.unshift(await draftRes.json());
+    }
   }
 
   return {
     props: {
-      data: data.contents,
+      items,
       totalCount: data.totalCount,
     },
   };

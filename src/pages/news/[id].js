@@ -1,10 +1,12 @@
 import parse from "html-react-parser";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { ArticlePagination } from "src/component/Pagenation";
 import { PageSubTitle, PageTitle } from "src/component/PageTitle";
 import { PageSEO } from "src/component/SEO";
 import { siteMetadata } from "src/data/siteMetaData";
 import { FixedLayout } from "src/layout";
+import { fetchNewsIds } from "src/lib/news";
 import { convertToEmbedUrl } from "src/utils/video";
 
 import Custom404 from "../404";
@@ -63,6 +65,7 @@ const NewsId = (props) => {
             )}
           </div>
         )}
+        <ArticlePagination newerId={props.newerId} olderId={props.olderId} />
       </main>
     </FixedLayout>
   );
@@ -114,9 +117,16 @@ export const getStaticProps = async ({ params, preview = false, previewData }) =
     };
   }
 
+  const ids = await fetchNewsIds();
+  const index = ids.indexOf(id);
+  const newerId = index > 0 ? ids[index - 1] : null;
+  const olderId = index >= 0 && index < ids.length - 1 ? ids[index + 1] : null;
+
   return {
     props: {
       data: data,
+      newerId,
+      olderId,
       preview,
     },
     revalidate: 1,

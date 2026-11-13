@@ -1,6 +1,5 @@
 import type { FC, ReactNode } from "react";
 import { useInView } from "react-intersection-observer";
-import { Button } from "src/component/Button";
 import Navigation from "src/layout/Navigation";
 
 import { Footer } from "./Footer";
@@ -29,14 +28,6 @@ export const FixedLayout: FC<Props> = (props) => {
         <main className="mx-8 sm:mx-auto">
           <LayoutErrorBoundary>{props.children}</LayoutErrorBoundary>
         </main>
-      </div>
-      <div className="mt-20 flex h-24 items-center justify-around">
-        <div className="opacity-0">
-          <Button onClick="Home">Home</Button>
-        </div>
-        <div>
-          <Button onClick="Return">Return</Button>
-        </div>
       </div>
       <Footer />
     </div>
